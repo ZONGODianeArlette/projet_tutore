@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\admin\tableauBordController;
+use App\Http\Controllers\public\utilisateurController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,9 +15,9 @@ use App\Http\Controllers\admin\tableauBordController;
 |
 */
 
-Route::get('/', [tableauBordController::class, "index"])->name("admin.tableauBord");
-Route::get('/mot', [tableauBordController::class, "mot"])->name("admin.list_mot");
-Route::get('/utilisateur', [tableauBordController::class, "utilisateur"])->name("admin.list_utilisateur");
+// Route::get('/', [tableauBordController::class, "index"])->name("admin.tableauBord");
+Route::get('/', [utilisateurController::class, "utilisateur"])->name("admin.utilisateur");
+//  Route::get('/utilisateur', [tableauBordController::class, "utilisateur"])->name("admin.list_utilisateur");
 
 
 

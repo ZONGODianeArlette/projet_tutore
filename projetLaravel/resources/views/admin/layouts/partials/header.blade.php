@@ -1,192 +1,98 @@
-<nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
-    <div class="navbar-brand-wrapper d-flex justify-content-center">
-      <div
-        class="navbar-brand-inner-wrapper d-flex justify-content-between align-items-center w-100"
-      >
-        <a class="navbar-brand brand-logo" href="index.html"
-          ><img src="{{  asset('asset_prive/images/logo.svg')}}" alt="logo"
-        /></a>
-        <a class="navbar-brand brand-logo-mini" href="index.html"
-          ><img src="{{  asset('asset_prive/images/logo-mini.svg') }}" alt="logo"
-        /></a>
-        <button
-          class="navbar-toggler navbar-toggler align-self-center"
-          type="button"
-          data-toggle="minimize"
-        >
-          <span class="mdi mdi-sort-variant"></span>
-        </button>
-      </div>
+<nav class="layout-navbar container-xxl navbar navbar-expand-xl navbar-detached align-items-center bg-navbar-theme"id="layout-navbar">
+    <div class="layout-menu-toggle navbar-nav align-items-xl-center me-3 me-xl-0 d-xl-none">
+      <a class="nav-item nav-link px-0 me-xl-4" href="javascript:void(0)">
+        <i class="bx bx-menu bx-sm"></i>
+      </a>
     </div>
-    <div
-      class="navbar-menu-wrapper d-flex align-items-center justify-content-end"
-    >
-      <!--<ul class="navbar-nav mr-lg-4 w-100">
-      <li class="nav-item nav-search d-none d-lg-block w-100">
-        <div class="input-group">
-          <div class="input-group-prepend">
-            <span class="input-group-text" id="search">
-              <i class="mdi mdi-magnify"></i>
-            </span>
-          </div>
-          <input type="text" class="form-control" placeholder="Search now" aria-label="search" aria-describedby="search">
+
+    <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
+      <!-- Search -->
+      <div class="navbar-nav align-items-center">
+        <div class="nav-item d-flex align-items-center">
+          <i class="bx bx-search fs-4 lh-0"></i>
+          <input
+            type="text"
+            class="form-control border-0 shadow-none"
+            placeholder="Search..."
+            aria-label="Search..."
+          />
         </div>
-      </li>
-    </ul> -->
-      <ul class="navbar-nav navbar-nav-right">
-        <li class="nav-item dropdown me-1">
+      </div>
+      <!-- /Search -->
+
+      <ul class="navbar-nav flex-row align-items-center ms-auto">
+        <!-- Place this tag where you want the button to render. -->
+        <li class="nav-item lh-1 me-3">
           <a
-            class="nav-link count-indicator dropdown-toggle d-flex justify-content-center align-items-center"
-            id="messageDropdown"
-            href="#"
-            data-bs-toggle="dropdown"
+            class="github-button"
+            href="https://github.com/themeselection/sneat-html-admin-template-free"
+            data-icon="octicon-star"
+            data-size="large"
+            data-show-count="true"
+            aria-label="Star themeselection/sneat-html-admin-template-free on GitHub"
+            >Star</a
           >
-            <i class="mdi mdi-message-text mx-0"></i>
-            <span class="count"></span>
-          </a>
-          <div
-            class="dropdown-menu dropdown-menu-right navbar-dropdown"
-            aria-labelledby="messageDropdown"
-          >
-            <p class="mb-0 font-weight-normal float-left dropdown-header">
-              Messages
-            </p>
-            <a class="dropdown-item">
-              <div class="item-thumbnail">
-                <img
-                  src="{{  asset('asset_prive/images/faces/face4.jpg') }}"
-                  alt="image"
-                  class="profile-pic"
-                />
-              </div>
-              <div class="item-content flex-grow">
-                <h6 class="ellipsis font-weight-normal">David Grey</h6>
-                <p class="font-weight-light small-text text-muted mb-0">
-                  The meeting is cancelled
-                </p>
-              </div>
-            </a>
-            <a class="dropdown-item">
-              <div class="item-thumbnail">
-                <img
-                  src="{{  asset('asset_prive/images/faces/face2.jpg') }}"
-                  alt="image"
-                  class="profile-pic"
-                />
-              </div>
-              <div class="item-content flex-grow">
-                <h6 class="ellipsis font-weight-normal">Tim Cook</h6>
-                <p class="font-weight-light small-text text-muted mb-0">
-                  New product launch
-                </p>
-              </div>
-            </a>
-            <a class="dropdown-item">
-              <div class="item-thumbnail">
-                <img
-                  src="{{  asset('asset_prive/images/faces/face3.jpg') }}"
-                  alt="image"
-                  class="profile-pic"
-                />
-              </div>
-              <div class="item-content flex-grow">
-                <h6 class="ellipsis font-weight-normal">Johnson</h6>
-                <p class="font-weight-light small-text text-muted mb-0">
-                  Upcoming board meeting
-                </p>
-              </div>
-            </a>
-          </div>
         </li>
-        <li class="nav-item dropdown me-4">
-          <a
-            class="nav-link count-indicator dropdown-toggle d-flex align-items-center justify-content-center notification-dropdown"
-            id="notificationDropdown"
-            href="#"
-            data-bs-toggle="dropdown"
-          >
-            <i class="mdi mdi-bell mx-0"></i>
-            <span class="count"></span>
+
+        <!-- User -->
+        <li class="nav-item navbar-dropdown dropdown-user dropdown">
+          <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
+            <div class="avatar avatar-online">
+              <img src="{{ asset('asset_prive/assets/img/avatars/1.png') }}" alt class="w-px-40 h-auto rounded-circle" />
+            </div>
           </a>
-          <div
-            class="dropdown-menu dropdown-menu-right navbar-dropdown"
-            aria-labelledby="notificationDropdown"
-          >
-            <p class="mb-0 font-weight-normal float-left dropdown-header">
-              Notifications
-            </p>
-            <a class="dropdown-item">
-              <div class="item-thumbnail">
-                <div class="item-icon bg-success">
-                  <i class="mdi mdi-information mx-0"></i>
+          <ul class="dropdown-menu dropdown-menu-end">
+            <li>
+              <a class="dropdown-item" href="#">
+                <div class="d-flex">
+                  <div class="flex-shrink-0 me-3">
+                    <div class="avatar avatar-online">
+                      <img src="{{ asset('asset_prive/assets/img/avatars/1.png') }}" alt class="w-px-40 h-auto rounded-circle" />
+                    </div>
+                  </div>
+                  <div class="flex-grow-1">
+                    <span class="fw-semibold d-block">John Doe</span>
+                    <small class="text-muted">Admin</small>
+                  </div>
                 </div>
-              </div>
-              <div class="item-content">
-                <h6 class="font-weight-normal">Application Error</h6>
-                <p class="font-weight-light small-text mb-0 text-muted">
-                  Just now
-                </p>
-              </div>
-            </a>
-            <a class="dropdown-item">
-              <div class="item-thumbnail">
-                <div class="item-icon bg-warning">
-                  <i class="mdi mdi-settings mx-0"></i>
-                </div>
-              </div>
-              <div class="item-content">
-                <h6 class="font-weight-normal">Settings</h6>
-                <p class="font-weight-light small-text mb-0 text-muted">
-                  Private message
-                </p>
-              </div>
-            </a>
-            <a class="dropdown-item">
-              <div class="item-thumbnail">
-                <div class="item-icon bg-info">
-                  <i class="mdi mdi-account-box mx-0"></i>
-                </div>
-              </div>
-              <div class="item-content">
-                <h6 class="font-weight-normal">New user registration</h6>
-                <p class="font-weight-light small-text mb-0 text-muted">
-                  2 days ago
-                </p>
-              </div>
-            </a>
-          </div>
+              </a>
+            </li>
+            <li>
+              <div class="dropdown-divider"></div>
+            </li>
+            <li>
+              <a class="dropdown-item" href="#">
+                <i class="bx bx-user me-2"></i>
+                <span class="align-middle">My Profile</span>
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="#">
+                <i class="bx bx-cog me-2"></i>
+                <span class="align-middle">Settings</span>
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="#">
+                <span class="d-flex align-items-center align-middle">
+                  <i class="flex-shrink-0 bx bx-credit-card me-2"></i>
+                  <span class="flex-grow-1 align-middle">Billing</span>
+                  <span class="flex-shrink-0 badge badge-center rounded-pill bg-danger w-px-20 h-px-20">4</span>
+                </span>
+              </a>
+            </li>
+            <li>
+              <div class="dropdown-divider"></div>
+            </li>
+            <li>
+              <a class="dropdown-item" href="auth-login-basic.html">
+                <i class="bx bx-power-off me-2"></i>
+                <span class="align-middle">Log Out</span>
+              </a>
+            </li>
+          </ul>
         </li>
-        <li class="nav-item nav-profile dropdown">
-          <a
-            class="nav-link dropdown-toggle"
-            href="#"
-            data-bs-toggle="dropdown"
-            id="profileDropdown"
-          >
-            <img src="{{  asset('asset_prive/images/faces/face5.jpg') }}" alt="profile" />
-            <span class="nav-profile-name">Louis Barnett</span>
-          </a>
-          <div
-            class="dropdown-menu dropdown-menu-right navbar-dropdown"
-            aria-labelledby="profileDropdown"
-          >
-            <a class="dropdown-item">
-              <i class="mdi mdi-settings text-primary"></i>
-              Settings
-            </a>
-            <a class="dropdown-item">
-              <i class="mdi mdi-logout text-primary"></i>
-              Logout
-            </a>
-          </div>
-        </li>
+        <!--/ User -->
       </ul>
-      <button
-        class="navbar-toggler navbar-toggler-right d-lg-none align-self-center"
-        type="button"
-        data-toggle="offcanvas"
-      >
-        <span class="mdi mdi-menu"></span>
-      </button>
     </div>
   </nav>

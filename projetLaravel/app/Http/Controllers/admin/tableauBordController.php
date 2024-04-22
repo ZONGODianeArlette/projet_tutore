@@ -7,15 +7,7 @@ use Illuminate\Http\Request;
 
 class tableauBordController extends Controller
 {
-    public function index() {
-        return view("admin.index");
-    }
-
-    public function mot() {
-        return view("admin.liste_mot");
-    }
-    public function utilisateur() {
-        return view("admin.liste_utilisateur");
-    }
+   public function index(){
+    return view("admin.index");
+   }
 }
-

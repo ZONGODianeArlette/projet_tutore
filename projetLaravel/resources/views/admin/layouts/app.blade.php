@@ -1,72 +1,155 @@
 <!DOCTYPE html>
-<html lang="en">
+
+<html
+  lang="en"
+  class="light-style layout-menu-fixed"
+  dir="ltr"
+  data-theme="theme-default"
+  data-assets-path="asset_prive/assets/"
+  data-template="vertical-menu-template-free"
+>
   <head>
-    <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta
       name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+      content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0"
     />
+
     <title>@yield('titre')</title>
-    <!-- plugins:css -->
-    <link rel="stylesheet" href="{{ asset('asset_prive/vendors/mdi/css/materialdesignicons.min.css') }}" />
-    <link rel="stylesheet" href="{{ asset('asset_prive/vendors/base/vendor.bundle.base.css') }}" />
-    <!-- endinject -->
-    <!-- plugin css for this page -->
+
+    <meta name="description" content="" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="{{ asset('asset_prive/assets/img/favicon/favicon.ico') }}" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
+      href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
       rel="stylesheet"
-      href="{{ asset('asset_prive/vendors/datatables.net-bs4/dataTables.bootstrap4.css') }}"
     />
-    <!-- End plugin css for this page -->
-    <!-- inject:css -->
-    <link rel="stylesheet" href="{{ asset('asset_prive/css/style.css') }}" />
-    <!-- endinject -->
-    <link rel="shortcut icon" href="{{ asset('asset_prive/images/favicon.png') }}" />
+
+    <!-- Icons. Uncomment required icon fonts -->
+    <link rel="stylesheet" href="{{ asset('asset_prive/assets/vendor/fonts/boxicons.css') }}" />
+
+    <!-- Core CSS -->
+    <link rel="stylesheet" href="{{ asset('asset_prive/assets/vendor/css/core.css" class="template-customizer-core-css') }}" />
+    <link rel="stylesheet" href="{{ asset('asset_prive/assets/vendor/css/theme-default.css" class="template-customizer-theme-css') }}" />
+    <link rel="stylesheet" href="{{ asset('asset_prive/assets/css/demo.css') }}" />
+
+    <!-- Vendors CSS -->
+    <link rel="stylesheet" href="{{ asset('asset_prive/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css') }}" />
+
+    <link rel="stylesheet" href="{{ asset('asset_prive/assets/vendor/libs/apex-charts/apex-charts.css') }}" />
+
+    <!-- Page CSS -->
+
+    <!-- Helpers -->
+    <script src="{{ asset('asset_prive/assets/vendor/js/helpers.js') }}"></script>
+
+    <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
+    <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
+    <script src="{{ asset('asset_prive/assets/js/config.js') }}"></script>
   </head>
+
   <body>
-    <div class="container-scroller">
-      <!-- partial:partials/_navbar.html -->
-      @include('admin.layouts.partials.header')
-      <!-- partial -->
-      <div class="container-fluid page-body-wrapper">
-        <!-- 2eme navbar -->
+    <!-- Layout wrapper -->
+    <div class="layout-wrapper layout-content-navbar">
+      <div class="layout-container">
+        <!-- Menu -->
 
         @include('admin.layouts.partials.sidebar')
-        <!-- fin de la deuxieme nav bar-->
+        <!-- / Menu -->
 
-        <!-- la partie de bienvenue -->
+        <!-- Layout container -->
+        <div class="layout-page">
+          <!-- Navbar -->
 
-        @yield('contenu')
-        <!-- main-panel ends -->
+         @include('admin.layouts.partials.header')
+
+          <!-- / Navbar -->
+
+          <!-- Content wrapper -->
+          <div class="content-wrapper">
+            <!-- Content -->
+          @yield('contenu')
+            <!-- / Content -->
+
+            <!-- Footer -->
+            <footer class="content-footer footer bg-footer-theme">
+              <div class="container-xxl d-flex flex-wrap justify-content-between py-2 flex-md-row flex-column">
+                <div class="mb-2 mb-md-0">
+                  ©
+                  <script>
+                    document.write(new Date().getFullYear());
+                  </script>
+                  , made with ❤️ by
+                  <a href="https://themeselection.com" target="_blank" class="footer-link fw-bolder">ThemeSelection</a>
+                </div>
+                <div>
+                  <a href="https://themeselection.com/license/" class="footer-link me-4" target="_blank">License</a>
+                  <a href="https://themeselection.com/" target="_blank" class="footer-link me-4">More Themes</a>
+
+                  <a
+                    href="https://themeselection.com/demo/sneat-bootstrap-html-admin-template/documentation/"
+                    target="_blank"
+                    class="footer-link me-4"
+                    >Documentation</a
+                  >
+
+                  <a
+                    href="https://github.com/themeselection/sneat-html-admin-template-free/issues"
+                    target="_blank"
+                    class="footer-link me-4"
+                    >Support</a
+                  >
+                </div>
+              </div>
+            </footer>
+            <!-- / Footer -->
+
+            <div class="content-backdrop fade"></div>
+          </div>
+          <!-- Content wrapper -->
+        </div>
+        <!-- / Layout page -->
       </div>
-      <!-- page-body-wrapper ends -->
+
+      <!-- Overlay -->
+      <div class="layout-overlay layout-menu-toggle"></div>
     </div>
-    <!-- container-scroller -->
+    <!-- / Layout wrapper -->
 
+    <div class="buy-now">
+      <a
+        href="https://themeselection.com/products/sneat-bootstrap-html-admin-template/"
+        target="_blank"
+        class="btn btn-danger btn-buy-now"
+        >Upgrade to Pro</a
+      >
+    </div>
 
+    <!-- Core JS -->
+    <!-- build:js assets/vendor/js/core.js -->
+    <script src="{{ asset('asset_prive/assets/vendor/libs/jquery/jquery.js') }}"></script>
+    <script src="{{ asset('asset_prive/assets/vendor/libs/popper/popper.js') }}"></script>
+    <script src="{{ asset('asset_prive/assets/vendor/js/bootstrap.js') }}"></script>
+    <script src="{{ asset('asset_prive/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js') }}"></script>
 
+    <script src="{{ asset('asset_prive/assets/vendor/js/menu.js') }}"></script>
+    <!-- endbuild -->
 
-    
-    <!-- plugins:js -->
-    <script src="{{ asset('asset_prive/vendors/base/vendor.bundle.base.js') }}"></script>
-    <!-- endinject -->
-    <!-- Plugin js for this page-->
-    <script src="{{ asset('asset_prive/vendors/chart.js/Chart.min.js') }}"></script>
-    <script src="{{ asset('asset_prive/vendors/datatables.net/jquery.dataTables.js') }}"></script>
-    <script src="{{ asset('asset_prive/vendors/datatables.net-bs4/dataTables.bootstrap4.js') }}"></script>
-    <!-- End plugin js for this page-->
-    <!-- inject:js -->
-    <script src="{{ asset('asset_prive/js/off-canvas.js') }}"></script>
-    <script src="{{ asset('asset_prive/js/hoverable-collapse.js') }}"></script>
-    <script src="{{ asset('asset_prive/js/template.js') }}"></script>
-    <!-- endinject -->
-    <!-- Custom js for this page-->
-    <script src="{{ asset('asset_prive/js/dashboard.js') }}"></script>
-    <script src="{{ asset('asset_prive/js/data-table.js') }}"></script>
-    <script src="{{ asset('asset_prive/js/jquery.dataTables.js') }}"></script>
-    <script src="{{ asset('asset_prive/js/dataTables.bootstrap4.js') }}"></script>
-    <!-- End custom js for this page-->
+    <!-- Vendors JS -->
+    <script src="{{ asset('asset_prive/assets/vendor/libs/apex-charts/apexcharts.js') }}"></script>
 
-    <script src="{{ asset('asset_prive/js/jquery.cookie.js" type="text/javascript') }}"></script>
+    <!-- Main JS -->
+    <script src="{{ asset('asset_prive/assets/js/main.js') }}"></script>
+
+    <!-- Page JS -->
+    <script src="{{ asset('asset_prive/assets/js/dashboards-analytics.js') }}"></script>
+
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
   </body>
 </html>
