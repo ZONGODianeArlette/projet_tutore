@@ -59,14 +59,14 @@
       <div class="layout-container">
         <!-- Menu -->
 
-        @include('admin.layouts.partials.sidebar')
+        @include('private.layouts.partials.sidebar')
         <!-- / Menu -->
 
         <!-- Layout container -->
         <div class="layout-page">
           <!-- Navbar -->
 
-         @include('admin.layouts.partials.header')
+         @include('private.layouts.partials.header')
 
           <!-- / Navbar -->
 

@@ -1,6 +1,6 @@
-@extends('utilisateur.layouts.app2')
+@extends('public.layouts.app2')
 
-@section('titre1', 'utilisateur')
+@section('titre1', "Page d'accueil")
 
 @section('contenu1')
 

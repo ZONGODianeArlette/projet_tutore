@@ -5,9 +5,9 @@ namespace App\Http\Controllers\public;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class utilisateurController extends Controller
+class PublicController extends Controller
 {
-    public function utilisateur(){
-        return view("utilisateur.index2");
+    public function index(){
+        return view("public.index");
        }
 }

@@ -70,7 +70,7 @@
           </div> 
         </div>
     
-     @include('utilisateur.layouts.partials.header2')
+     @include('public.layouts.partials.header2')
     
     
         <!-- <div class="particlehead"></div> -->

@@ -1,8 +1,8 @@
 <?php
 
+use App\Http\Controllers\private\admin\TableauBordController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\admin\tableauBordController;
-use App\Http\Controllers\public\utilisateurController;
+use App\Http\Controllers\public\PublicController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,8 +15,8 @@ use App\Http\Controllers\public\utilisateurController;
 |
 */
 
- Route::get('/tableau', [tableauBordController::class, "index"])->name("admin.tableauBord");
-Route::get('/', [utilisateurController::class, "utilisateur"])->name("admin.utilisateur");
+Route::get('/admin-tableau-de-bord', [TableauBordController::class, "index"])->name("admin.tableauBord");
+Route::get('/', [PublicController::class, "index"])->name("public.index");
 //  Route::get('/utilisateur', [tableauBordController::class, "utilisateur"])->name("admin.list_utilisateur");
 
 
