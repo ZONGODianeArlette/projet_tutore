@@ -1,6 +1,6 @@
 @extends('private.layouts.app')
 
-@section('titre', "Tableau de bord de l'administrateur")
+@section('titre', "Tableau de bord de l'utilisateur")
 
 @section('contenu')
 
