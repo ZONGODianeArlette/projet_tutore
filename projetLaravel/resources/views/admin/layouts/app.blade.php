@@ -34,8 +34,8 @@
     <link rel="stylesheet" href="{{ asset('asset_prive/assets/vendor/fonts/boxicons.css') }}" />
 
     <!-- Core CSS -->
-    <link rel="stylesheet" href="{{ asset('asset_prive/assets/vendor/css/core.css" class="template-customizer-core-css') }}" />
-    <link rel="stylesheet" href="{{ asset('asset_prive/assets/vendor/css/theme-default.css" class="template-customizer-theme-css') }}" />
+    <link rel="stylesheet" href="{{ asset('asset_prive/assets/vendor/css/core.css') }}" class="template-customizer-core-css" />
+    <link rel="stylesheet" href="{{ asset('asset_prive/assets/vendor/css/theme-default.css') }}" class="template-customizer-theme-css" />
     <link rel="stylesheet" href="{{ asset('asset_prive/assets/css/demo.css') }}" />
 
     <!-- Vendors CSS -->

@@ -15,7 +15,7 @@ use App\Http\Controllers\public\utilisateurController;
 |
 */
 
-// Route::get('/', [tableauBordController::class, "index"])->name("admin.tableauBord");
+ Route::get('/tableau', [tableauBordController::class, "index"])->name("admin.tableauBord");
 Route::get('/', [utilisateurController::class, "utilisateur"])->name("admin.utilisateur");
 //  Route::get('/utilisateur', [tableauBordController::class, "utilisateur"])->name("admin.list_utilisateur");
 
