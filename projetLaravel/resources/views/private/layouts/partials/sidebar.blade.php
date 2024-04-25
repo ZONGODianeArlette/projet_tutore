@@ -66,25 +66,75 @@
 
     <div class="menu-inner-shadow"></div>
 
+    @if(auth()->user()->role === 'admin')
     <ul class="menu-inner py-1">
       <!-- Dashboard -->
       <li class="menu-item active">
         <a href="{{ url('tableau') }}" class="menu-link">
           <i class="menu-icon tf-icons bx bx-home-circle"></i>
-          <div data-i18n="Analytics">Dashboard</div>
+          <div data-i18n="Analytics">Tableau de bord</div>
         </a>
       </li>
       <li class="menu-item ">
         <a href="index.html" class="menu-link">
-          <i class="menu-icon tf-icons bx bx-layout"></i>
+          <i class="menu-icon tf-icons bx bx-right-indent"></i>
+          <div data-i18n="Analytics">Gestion des lessons</div>
+        </a>
+      </li>
+      <li class="menu-item ">
+        <a href="index.html" class="menu-link">
+          <i class="menu-icon tf-icons bx bxs-user-detail"></i>
           <div data-i18n="Analytics">Listes des utilisateurs</div>
         </a>
       </li>
       <li class="menu-item ">
         <a href="index.html" class="menu-link">
-          <i class="menu-icon tf-icons bx bx-layout"></i>
-          <div data-i18n="Analytics">Listes des mots</div>
+          <i class="menu-icon tf-icons bx bxs-cog"></i>
+          <div data-i18n="Analytics">Mon profil</div>
         </a>
       </li>
     </ul>
+    @endif
+
+    @if(auth()->user()->role === 'user')
+    <ul class="menu-inner py-1">
+      <!-- Dashboard -->
+      <li class="menu-item active">
+        <a href="{{ url('tableau') }}" class="menu-link">
+          <i class="menu-icon tf-icons bx bx-home-circle"></i>
+          <div data-i18n="Analytics">Tableau de bord</div>
+        </a>
+      </li>
+      <li class="menu-item ">
+        <a href="index.html" class="menu-link">
+          <i class="menu-icon tf-icons bx bx-list-plus"></i>
+          <div data-i18n="Analytics">Selectionner des lessons</div>
+        </a>
+      </li>
+      <li class="menu-item ">
+        <a href="index.html" class="menu-link">
+          <i class="menu-icon tf-icons bx bx-list-ul"></i>
+          <div data-i18n="Analytics">Mes lessons</div>
+        </a>
+      </li>
+      <li class="menu-item ">
+        <a href="index.html" class="menu-link">
+          <i class="menu-icon tf-icons bx bxs-layer"></i>
+          <div data-i18n="Analytics">Mes scores</div>
+        </a>
+      </li>
+      <li class="menu-item ">
+        <a href="index.html" class="menu-link">
+          <i class="menu-icon tf-icons bx bxs-message"></i>
+          <div data-i18n="Analytics">Messages</div>
+        </a>
+      </li>
+      <li class="menu-item ">
+        <a href="index.html" class="menu-link">
+          <i class="menu-icon tf-icons bx bxs-cog"></i>
+          <div data-i18n="Analytics">Mon profil</div>
+        </a>
+      </li>
+    </ul>   
+    @endif
   </aside>

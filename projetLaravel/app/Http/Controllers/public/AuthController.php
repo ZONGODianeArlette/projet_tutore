@@ -18,6 +18,7 @@ class AuthController extends Controller
 
     public function inscriptionAction(Request $request)
     {
+        // dd($request->all());
         $validator = Validator::make(
             $request->all(),
             [
@@ -42,13 +43,13 @@ class AuthController extends Controller
                 ->withInput();
         }
 
-        $promoteur = User::create([
-            'nom_prenom' => $request->nomcomplet,
+        $user = User::create([
+            'nom_prenom' => $request->nom_prenom,
             'email' => $request->email,
             'password' => $request->password,
         ]);
 
-        $promoteur->save();
+        $user->save();
 
         return redirect()->route('public.connexion')->with('success', 'Inscription réussie ! Connectez-vous maintenant.');
     }
@@ -118,7 +119,7 @@ class AuthController extends Controller
         Auth::logout();
         $request->session()->invalidate();
         $request->session()->regenerateToken();
-        return redirect()->route('public.accueil')
+        return redirect()->route('public.index')
             ->withSuccess('Vous avez été deconnecté avec succès');
     }
 }

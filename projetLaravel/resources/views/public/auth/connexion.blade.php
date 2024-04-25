@@ -78,7 +78,13 @@
 
               </div>
               <div class="col-sm-12 col-md-6 col-lg-6" style="display: flex; flex-direction:column;
-              align-items:; margin-top:10vh ">
+              align-items:; margin-top:10vh">
+                              @if (session('success'))
+                              <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                  {{ session('success') }}
+                                  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                              </div>
+                              @endif
                 <div class="card">
                   <div class="card-body">
                     <!-- Logo -->
@@ -145,8 +151,14 @@
                     <!-- /Logo -->
                     <h4 class="mb-2">Bienvenue 👋</h4>
                     <p class="mb-4">Entrez vos coordonnées pour vous connecter</p>
-      
+                    @if($errors->has('login'))
+                    <div class="alert alert-danger form-login">
+                        {{ $errors->first('login') }}
+                    </div>
+                    @endif
                     <form id="formAuthentication" class="mb-3" action="{{ route('public.connexion-action') }}" method="POST">
+                    @csrf
+
                       <div class="mb-3">
                         <label for="email" class="form-label">Email</label>
                         <input
@@ -157,6 +169,9 @@
                           placeholder="Entrez votre email"
                           autofocus
                         />
+                        @if ($errors->has('email'))
+                        <span class="text-danger">{{ $errors->first('email') }}</span>
+                        @endif
                       </div>
                       <div class="mb-3 form-password-toggle">
                         <div class="d-flex justify-content-between">
@@ -174,6 +189,9 @@
                             placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;"
                             aria-describedby="password"
                           />
+                          @if ($errors->has('email'))
+                          <span class="text-danger">{{ $errors->first('email') }}</span>
+                          @endif
                           <span class="input-group-text cursor-pointer"><i class="bx bx-hide"></i></span>
                         </div>
                       </div>
