@@ -164,6 +164,9 @@
                     <div class="mb-3">
                       <label for="email" class="form-label">Email</label>
                       <input type="text" class="form-control" id="email" name="email" placeholder="Enter your email" />
+                       @if ($errors->has('email'))
+                        <span class="text-danger">{{ $errors->first('email') }}</span>
+                        @endif
                     </div>
                     <div class="mb-3 form-password-toggle">
                       <label class="form-label" for="password">Mot de passe</label>
@@ -176,6 +179,9 @@
                           placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;"
                           aria-describedby="password"
                         />
+                         @if ($errors->has('password'))
+                        <span class="text-danger">{{ $errors->first('password') }}</span>
+                        @endif
                         <span class="input-group-text cursor-pointer"><i class="bx bx-hide"></i></span>
                       </div>
                     </div>

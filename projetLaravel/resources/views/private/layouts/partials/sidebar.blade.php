@@ -70,13 +70,13 @@
     <ul class="menu-inner py-1">
       <!-- Dashboard -->
       <li class="menu-item active">
-        <a href="{{ url('tableau') }}" class="menu-link">
+        <a href="{{ route('admin.tableauBord') }}" class="menu-link">
           <i class="menu-icon tf-icons bx bx-home-circle"></i>
           <div data-i18n="Analytics">Tableau de bord</div>
         </a>
       </li>
       <li class="menu-item ">
-        <a href="index.html" class="menu-link">
+        <a href="{{ route('lessons.index') }}" class="menu-link">
           <i class="menu-icon tf-icons bx bx-right-indent"></i>
           <div data-i18n="Analytics">Gestion des lessons</div>
         </a>
