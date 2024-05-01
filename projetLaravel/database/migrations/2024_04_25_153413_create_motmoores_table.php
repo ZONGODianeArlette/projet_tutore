@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('motmoores', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('lesson_id')->references('id')->on('lessons')->onDelete('cascade');
+            $table->foreignId('motmooresingulier_id')->references('id')->on('motmooresinguliers')->onDelete('cascade');
+            $table->foreignId('motmoorepluriel_id')->references('id')->on('motmoorepluriels')->onDelete('cascade');
             $table->timestamps();
         });
     }

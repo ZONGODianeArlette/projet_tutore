@@ -13,7 +13,9 @@ return new class extends Migration
     {
         Schema::create('motmoorepluriels', function (Blueprint $table) {
             $table->id();
-            $table->string('mot');
+            $table->string('mot_en_fr');
+            $table->string('mot_en_moore');
+            $table->string('suffixe')->nullable();
             $table->string('image')->nullable();
             $table->string('description')->nullable();
             $table->string('exemple')->nullable();

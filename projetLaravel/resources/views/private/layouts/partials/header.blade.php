@@ -54,7 +54,7 @@
               <div class="dropdown-divider"></div>
             </li>
             <li>
-              <a class="dropdown-item" href="#">
+              <a class="dropdown-item" href="{{ route('private.admin.profil') }}">
                 <i class="bx bx-user me-2"></i>
                 <span class="align-middle">Mon Profil</span>
               </a>

@@ -10,7 +10,9 @@ class Motmooresingulier extends Model
     use HasFactory;
 
     protected $fillable = [
-        'mot',
+        'mot_en_fr',
+        'mot_en_moore',
+        'suffixe',
         'image',
         'description',
         'exemple',

@@ -14,7 +14,7 @@
                   <div class="col-xl">
                     <div class="card mb-4">
                       <div class="card-body">
-                        <form action="{{ route('lessons.updated', $lesson) }}" method="POST">
+                        <form action="{{ route('lessons.update', $lesson) }}" method="POST">
                           @csrf
                           @method('PUT')
                           <div class="mb-3">

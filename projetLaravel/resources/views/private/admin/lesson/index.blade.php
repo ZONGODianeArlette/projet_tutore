@@ -9,7 +9,9 @@
                 <h2>
                     Gestion des lessons
                 </h2>
-                <a href="{{ route('lessons.create') }}" class="btn btn-primary text-white mt-2 mt-xl-0 float-left-btn" title="Cliquez ici pour ajouter une nouvelle Lesson">Ajouter une lesson</a>
+                <div class="d-flex justify-content-end mb-5">
+                  <a href="{{ route('lessons.create') }}" class="btn btn-primary text-white mt-2 mt-xl-0 float-left-btn" title="Cliquez ici pour ajouter une nouvelle Lesson">Ajouter une lesson</a>
+                </div>
                 <div class="row">
                     @if (session('success'))
                               <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -42,15 +44,21 @@
                                       <i class="bx bx-dots-vertical-rounded"></i>
                                     </button>
                                     <div class="dropdown-menu">
-                                      <a class="dropdown-item" href=""
+                                      <a class="dropdown-item" href="{{route('lessons.show', $lesson->id)}}"
                                         ><i class="bx bxs-book-open me-1"></i> Ouvrir</a
                                       >
                                       <a class="dropdown-item" href="{{route('lessons.edit', $lesson->id)}}"
                                         ><i class="bx bx-edit-alt me-1"></i> Modifier</a
                                       >
-                                      <a class="dropdown-item" href="{{route('lessons.destroy', $lesson->id)}}"
-                                        ><i class="bx bx-trash me-1"></i> Suprimer</a
-                                      >
+                                      <a class="dropdown-item" href="#" onclick="event.preventDefault(); if(confirm('Êtes-vous sûr de vouloir supprimer cette leçon ?')) { document.getElementById('delete-lesson-{{ $lesson->id }}').submit(); }">
+                                        <i class="bx bx-trash me-1"></i> Supprimer
+                                      </a>
+                                    
+                                      <form id="delete-lesson-{{ $lesson->id }}" action="{{ route('lessons.destroy', $lesson->id) }}" method="POST" style="display: none;">
+                                          @csrf
+                                          @method('DELETE')
+                                      </form>
+                                    
                                     </div>
                                   </div>
                                 </td>

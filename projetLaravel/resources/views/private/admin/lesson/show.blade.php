@@ -9,6 +9,7 @@
                 <h2>
                     Detail de la {{$lesson->nom}}
                 </h2>
+                <a href="{{ route('ajout-mot-moore', $lesson->id) }}" class="btn btn-primary text-white mt-2 mt-xl-0 float-left-btn" title="Cliquez ici pour ajouter une nouvelle Lesson">Ajouter un mot mooré</a>
                
             </div>
         </div>
