@@ -5,7 +5,7 @@ namespace App\Http\Controllers\private\admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class ProphilController extends Controller
+class ProfilController extends Controller
 {
     /**
      * Display a listing of the resource.

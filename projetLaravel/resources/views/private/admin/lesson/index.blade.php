@@ -9,7 +9,7 @@
                 <h2>
                     Gestion des lessons
                 </h2>
-                <div class="d-flex justify-content-end mb-5">
+                <div class="d-flex justify-content-end mb-2">
                   <a href="{{ route('lessons.create') }}" class="btn btn-primary text-white mt-2 mt-xl-0 float-left-btn" title="Cliquez ici pour ajouter une nouvelle Lesson">Ajouter une lesson</a>
                 </div>
                 <div class="row">

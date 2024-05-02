@@ -5,14 +5,14 @@ use App\Http\Controllers\public\AuthController;
 use App\Http\Controllers\public\PublicController;
 use App\Http\Controllers\private\admin\UserController;
 use App\Http\Controllers\private\admin\LessonController;
-use App\Http\Controllers\private\admin\ProphilController;
+use App\Http\Controllers\private\admin\ProfilController;
 use App\Http\Controllers\private\admin\TableauBordController;
 use App\Http\Controllers\private\user\UserTableauBordController;
 
 
 Route::get('/user-tableau-de-bord', [UserTableauBordController::class, "index"])->name("user.tableauBord");
 Route::get('/', [PublicController::class, "index"])->name("public.index");
-Route::get('/profil', [ProphilController::class, "profil"])->name("private.admin.profil");
+Route::get('/profil', [ProfilController::class, "profil"])->name("private.admin.profil");
 Route::get('/liste-user', [UserController::class, "liste"])->name("private.admin.list.liste");
 //  Route::get('/utilisateur', [tableauBordController::class, "utilisateur"])->name("admin.list_utilisateur");
 

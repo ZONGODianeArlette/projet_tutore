@@ -65,8 +65,14 @@ class LessonController extends Controller
     public function show(string $id)
     {
         $lesson = Lesson::find($id);
+        // $motsMoores = $lesson->motMoores;
 
-        return view('private.admin.lesson.show', ["lesson" => $lesson]);
+        return view('private.admin.lesson.show', [
+            "lesson" => $lesson,
+            // "motMoore" => $motMoore,
+            // "motSingulier" => $motSingulier,
+            // "motPluriel" => $motPluriel
+        ]);
     }
 
     /**
