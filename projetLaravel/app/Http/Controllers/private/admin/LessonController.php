@@ -153,14 +153,14 @@ class LessonController extends Controller
         $validator = Validator::make(
             $request->all(),
             [
-                'mot_en_fr_singlier' => 'required',
-                'mot_en_moore_singlier' => 'required',
+                'mot_en_fr_singulier' => 'required',
+                'mot_en_moore_singulier' => 'required',
                 'mot_en_fr_pluriel' => 'required',
                 'mot_en_moore_pluriel' => 'required',
             ],
             [
-                'mot_en_fr_singlier.required' => 'Le champ mot français en singluier est requis.',
-                'mot_en_moore_singlier.required' => 'Le champ mot moore en singluier est requis.',
+                'mot_en_fr_singulier.required' => 'Le champ mot français en singluier est requis.',
+                'mot_en_moore_singulier.required' => 'Le champ mot moore en singluier est requis.',
                 'mot_en_fr_pluriel.required' => 'Le champ mot français au pluriel est requis.',
                 'mot_en_moore_pluriel.required' => 'Le champ mot moore au pluriel est requis.',
             ]
@@ -174,11 +174,11 @@ class LessonController extends Controller
 
         //Creation du singulier
         $motmooresigluier = Motmooresingulier::create([
-            'mot_en_fr' => $request->mot_en_fr_singlier,
-            'mot_en_moore' => $request->mot_en_moore_singlier,
-            'suffixe' => $request->suffixe,
-            'exemple' => $request->exemple,
-            'description' => $request->description,
+            'mot_en_fr' => $request->mot_en_fr_singulier,
+            'mot_en_moore' => $request->mot_en_moore_singulier,
+            'suffixe' => $request->suffixe_singulier,
+            'exemple' => $request->exemple_singulier,
+            'description' => $request->description_singulier,
         ]);
         $motmooresigluier->save();
 
@@ -186,9 +186,9 @@ class LessonController extends Controller
         $motmoorepluriel = Motmoorepluriel::create([
             'mot_en_fr' => $request->mot_en_fr_pluriel,
             'mot_en_moore' => $request->mot_en_moore_pluriel,
-            'suffixe' => $request->suffixe,
-            'exemple' => $request->exemple,
-            'description' => $request->description,
+            'suffixe' => $request->suffixe_pluriel,
+            'exemple' => $request->exemple_pluriel,
+            'description' => $request->description_pluriel,
         ]);
         $motmoorepluriel->save();
 

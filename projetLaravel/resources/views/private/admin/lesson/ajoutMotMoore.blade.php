@@ -19,18 +19,18 @@
                         <div class="card-body">
                             <div class="mb-3">
                                 <label class="form-label" for="basic-default-fullname">Mot en Français</label>
-                                <input type="text" class="form-control" name="mot_en_fr_singlier" id="basic-default-fullname"
+                                <input type="text" class="form-control" name="mot_en_fr_singulier" id="basic-default-fullname"
                                     placeholder="Entrez le mot en français" />
                             </div>
                             <div class="mb-3">
                                 <label class="form-label" for="basic-default-company">Mot en mooré</label>
-                                <input type="text" class="form-control" name="mot_en_moore_singlier" id="basic-default-company"
+                                <input type="text" class="form-control" name="mot_en_moore_singulier" id="basic-default-company"
                                     placeholder="Entrez le mot en mooré" />
                             </div>
                             <div class="mb-3">
                                 <label class="form-label" for="basic-default-email">Le suffixe</label>
                                 <div class="input-group input-group-merge">
-                                    <input name="suffixe_singlier" type="text" id="basic-default-email" class="form-control"
+                                    <input name="suffixe_singulier" type="text" id="basic-default-email" class="form-control"
                                         placeholder="Entrez le suffixe" aria-label="john.doe"
                                         aria-describedby="basic-default-email2" />
                                 </div>
@@ -38,19 +38,19 @@
                             <div class="mb-3">
                                 <label class="form-label" for="basic-default-email">Ajouter une image</label>
                                 <div class="input-group">
-                                    <input type="file" name="image_singlier" class="form-control" id="inputGroupFile04"
+                                    <input type="file" name="image_singulier" class="form-control" id="inputGroupFile04"
                                         aria-describedby="inputGroupFileAddon04" aria-label="Upload" />
                                 </div>
                             </div>
     
                             <div class="mb-3">
                                 <label class="form-label" for="basic-default-phone">Un exemple</label>
-                                <input type="text" id="basic-default-phone" name="exemple_singlier" class="form-control phone-mask"
+                                <input type="text" id="basic-default-phone" name="exemple_singulier" class="form-control phone-mask"
                                     placeholder="Ajouter un exemple" />
                             </div>
                             <div class="mb-3">
                                 <label class="form-label" for="basic-default-message">Une description</label>
-                                <textarea id="basic-default-message" name="description_singlier" class="form-control" placeholder="Ajouter une description"></textarea>
+                                <textarea id="basic-default-message" name="description_singulier" class="form-control" placeholder="Ajouter une description"></textarea>
                             </div>
                         </div>
                     </div>
