@@ -34,7 +34,7 @@
                             <tbody class="table-border-bottom-0">
                               
                               @foreach ($lessons as $lesson)
-                                  <tr>
+                                <tr>
                                 <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>{{$lesson->nom}}</strong></td>
                                 <td>{{$lesson->totalMotMoore}}</td>
                                 <td><span class="badge bg-label-dark me-1">{{$lesson->point}}</span></td>

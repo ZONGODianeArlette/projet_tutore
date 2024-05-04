@@ -30,6 +30,9 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
     Route::get('/admin-tableau-de-bord', [TableauBordController::class, "index"])->name("admin.tableauBord");
     Route::get('/ajout-mot-moore/{idLesson}', [LessonController::class, "ajoutMotMoore"])->name("ajout-mot-moore");
     Route::post('/ajout-mot-moore/{idLesson}/action', [LessonController::class, "ajoutMotMooreAction"])->name("ajout-mot-moore-action");
+    Route::get('/edit-mot-moore/{idMotMoore}', [LessonController::class, "editMotMoore"])->name("edit-mot-moore");
+    Route::put('/edit-mot-moore/{idMotMoore}/action', [LessonController::class, "editMotMooreAction"])->name("edit-mot-moore-action");
+    Route::delete('/delete-mot-moore/{idMotMoore}/action', [LessonController::class, "deletetMotMooreAction"])->name("delete-mot-moore-action");
     Route::resource('lessons', LessonController::class);
     Route::resource('users', UserController::class);
 });

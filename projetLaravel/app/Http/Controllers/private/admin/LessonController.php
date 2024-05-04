@@ -204,4 +204,85 @@ class LessonController extends Controller
         return redirect()->route('lessons.show', ["lesson" => $idLesson])
         ->with('success', 'Exercice ajouté avec succès !!!');
     }
+
+    public function editMotMoore($idMotMoore)
+    {
+        $motmoore = Motmoore::find($idMotMoore);
+        return view('private.admin.lesson.editMotMoore', compact('motmoore'));
+    }
+
+    public function editMotMooreAction(Request $request, $idMotMoore)
+    {
+        // dd($request->all());
+        $validator = Validator::make(
+            $request->all(),
+            [
+                'mot_en_fr_singulier' => 'required',
+                'mot_en_moore_singulier' => 'required',
+                'mot_en_fr_pluriel' => 'required',
+                'mot_en_moore_pluriel' => 'required',
+            ],
+            [
+                'mot_en_fr_singulier.required' => 'Le champ mot français en singluier est requis.',
+                'mot_en_moore_singulier.required' => 'Le champ mot moore en singluier est requis.',
+                'mot_en_fr_pluriel.required' => 'Le champ mot français au pluriel est requis.',
+                'mot_en_moore_pluriel.required' => 'Le champ mot moore au pluriel est requis.',
+            ]
+        );
+
+        if ($validator->fails()) {
+            return redirect()->back()
+                ->withErrors($validator)
+                ->withInput();
+        }
+
+        //Creation du singulier
+        $motmooresigluier = Motmooresingulier::create([
+            'mot_en_fr' => $request->mot_en_fr_singulier,
+            'mot_en_moore' => $request->mot_en_moore_singulier,
+            'suffixe' => $request->suffixe_singulier,
+            'exemple' => $request->exemple_singulier,
+            'description' => $request->description_singulier,
+        ]);
+
+        $motmoore = Motmoore::find($idMotMoore);
+
+        $idLesson = $motmoore->lesson->id;
+        $lesson = Lesson::find($idLesson);
+        $singulier = $motmoore->singulier;
+        $pluriel = $motmoore->pluriel;
+
+        $singulier->update([
+            'mot_en_fr' => $request->mot_en_fr_singulier,
+            'mot_en_moore' => $request->mot_en_moore_singulier,
+            'suffixe' => $request->suffixe_singulier,
+            'exemple' => $request->exemple_singulier,
+            'description' => $request->description_singulier,
+        ]);
+
+        $pluriel->update([
+            'mot_en_fr' => $request->mot_en_fr_pluriel,
+            'mot_en_moore' => $request->mot_en_moore_pluriel,
+            'suffixe' => $request->suffixe_pluriel,
+            'exemple' => $request->exemple_pluriel,
+            'description' => $request->description_pluriel,
+        ]);
+
+        $singulier->save();
+        $pluriel->save();
+       
+        return redirect()->route('lessons.show', ["lesson" => $lesson])
+        ->with('success', 'Exercice ajouté avec succès !!!');
+    }
+
+    public function deletetMotMooreAction($idMotMoore)
+    {
+        $motmoore = Motmoore::findOrFail($idMotMoore);
+        $idLesson = $motmoore->lesson->id;
+        $lesson = Lesson::find($idLesson);
+        $motmoore->delete();
+
+        return redirect()->route('lessons.show', ["lesson" => $lesson])
+         ->with('success', 'Mot mooré supprimer avec succès.');
+    }
 }
