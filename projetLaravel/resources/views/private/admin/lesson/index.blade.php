@@ -29,6 +29,7 @@
                                 <th>Mots Moorés</th>
                                 <th>Points</th>
                                 <th>Actions</th>
+                                
                               </tr>
                             </thead>
                             <tbody class="table-border-bottom-0">

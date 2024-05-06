@@ -190,6 +190,9 @@ class LessonController extends Controller
             'exemple' => $request->exemple_pluriel,
             'description' => $request->description_pluriel,
         ]);
+
+
+
         $motmoorepluriel->save();
 
         //Creation du motmoore
@@ -199,6 +202,11 @@ class LessonController extends Controller
             'motmooresingulier_id' => $motmooresigluier->id,
             'motmoorepluriel_id' => $motmoorepluriel->id,
         ]);
+
+        $lesson->totalMotMoore = $lesson->totalMotMoore + 1;
+        $lesson->point = $lesson->point + 5;
+        $lesson->save();
+
         $motmoore->save();
 
         return redirect()->route('lessons.show', ["lesson" => $idLesson])
@@ -280,6 +288,9 @@ class LessonController extends Controller
         $motmoore = Motmoore::findOrFail($idMotMoore);
         $idLesson = $motmoore->lesson->id;
         $lesson = Lesson::find($idLesson);
+        $lesson->totalMotMoore = $lesson->totalMotMoore - 1;
+        $lesson->point = $lesson->point - 5;
+        $lesson->save();
         $motmoore->delete();
 
         return redirect()->route('lessons.show', ["lesson" => $lesson])

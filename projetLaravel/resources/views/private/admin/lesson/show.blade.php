@@ -148,6 +148,7 @@
                                                                 onclick="event.preventDefault(); if(confirm('Êtes-vous sûr de vouloir supprimer ce mot mooré ?')) { document.getElementById('delete-motmoore-{{ $motMoore->id }}').submit(); }">
                                                                 <i class="bx bx-trash me-1"></i> Supprimer
                                                             </a>
+                                                            
 
                                                             <form id="delete-motmoore-{{ $motMoore->id }}"
                                                                 action="{{ route('delete-mot-moore-action', $motMoore->id) }}"
