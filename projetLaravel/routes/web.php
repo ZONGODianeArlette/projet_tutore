@@ -7,10 +7,11 @@ use App\Http\Controllers\private\admin\UserController;
 use App\Http\Controllers\private\admin\LessonController;
 use App\Http\Controllers\private\admin\ProfilController;
 use App\Http\Controllers\private\admin\TableauBordController;
+use App\Http\Controllers\private\user\MesLessonController;
+use App\Http\Controllers\private\user\SelectLessonController;
 use App\Http\Controllers\private\user\UserTableauBordController;
 
 
-Route::get('/user-tableau-de-bord', [UserTableauBordController::class, "index"])->name("user.tableauBord");
 Route::get('/', [PublicController::class, "index"])->name("public.index");
 Route::get('/profil', [ProfilController::class, "profil"])->name("private.admin.profil");
 Route::get('/liste-user', [UserController::class, "liste"])->name("private.admin.list.liste");
@@ -38,3 +39,10 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
 });
 
 
+#Public routes
+Route::middleware(['auth', 'role:user'])->group(function () {
+    Route::get('/user-tableau-de-bord', [UserTableauBordController::class, "index"])->name("user.tableauBord");
+    Route::get('/selectionner-des-lessons', [SelectLessonController::class, "index"])->name("selection-lesson");
+    Route::post('/selectionner-des-lessons/action', [SelectLessonController::class, "selectionAction"])->name("selection-lesson-action");
+    Route::get('/mes-lessons', [MesLessonController::class, "index"])->name("mes-lessons");
+});

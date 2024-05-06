@@ -106,13 +106,13 @@
         </a>
       </li>
       <li class="menu-item ">
-        <a href="index.html" class="menu-link">
+        <a href="{{ route('selection-lesson') }}" class="menu-link">
           <i class="menu-icon tf-icons bx bx-list-plus"></i>
           <div data-i18n="Analytics">Selectionner des lessons</div>
         </a>
       </li>
       <li class="menu-item ">
-        <a href="index.html" class="menu-link">
+        <a href="{{ route('mes-lessons') }}" class="menu-link">
           <i class="menu-icon tf-icons bx bx-list-ul"></i>
           <div data-i18n="Analytics">Mes lessons</div>
         </a>
