@@ -37,7 +37,7 @@
                                     <tr>
                                         <td>{{ $lesson->nom }}</td>
                                         <td>
-                                            <input class="form-check-input" name="lessons[]" type="checkbox" id="lesson_{{ $lesson->id }}" />
+                                            <input class="form-check-input" type="checkbox" id="lesson_{{ $lesson->id }}" name="lessons[]" value="{{ $lesson->id }}" />
                                         </td>
                                     </tr>
                                     @endforeach
@@ -46,7 +46,7 @@
                         </div>
                     </div>
                     <div id="ajouter-button" style="display:none; text-align:center;" class="mt-3">
-                        <button type="submit" class="btn btn-primary" style="width: 50%!important">Ajouter à mes lessons</button>
+                        <button type="submit" onclick="return confirm('Etes vous sûr de vouloir terminer cette action ? En terminant cette action, les lessons selectionner figurerons dans la section *Mes Lessons* .')" class="btn btn-primary" style="width: 50%!important">Ajouter à mes lessons</button>
                     </div>
                 </div>
             </form>

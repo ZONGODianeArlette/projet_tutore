@@ -45,4 +45,6 @@ Route::middleware(['auth', 'role:user'])->group(function () {
     Route::get('/selectionner-des-lessons', [SelectLessonController::class, "index"])->name("selection-lesson");
     Route::post('/selectionner-des-lessons/action', [SelectLessonController::class, "selectionAction"])->name("selection-lesson-action");
     Route::get('/mes-lessons', [MesLessonController::class, "index"])->name("mes-lessons");
+    Route::get('/deselectionner-des-lessons/action/{idLesson}', [MesLessonController::class, "deselectionAction"])->name("deselection-lesson-action");
+    Route::get('/apprentissage-index/{idLesson}', [MesLessonController::class, "apprentissageLesson"])->name("apprentissage-index");
 });

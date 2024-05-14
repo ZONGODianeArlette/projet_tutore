@@ -27,9 +27,9 @@
                         <ul class="nav nav-pills mb-3 nav-fill" role="tablist">
                             <li class="nav-item">
                                 <button type="button" class="nav-link active" role="tab" data-bs-toggle="tab"
-                                    data-bs-target="#navs-pills-justified-home"
-                                    aria-controls="navs-pills-justified-home" aria-selected="true">
-                                     En cours
+                                    data-bs-target="#navs-pills-justified-home" aria-controls="navs-pills-justified-home"
+                                    aria-selected="true">
+                                    En cours
                                     <span class="badge rounded-pill badge-center h-px-20 w-px-20 bg-danger">10</span>
                                 </button>
                             </li>
@@ -37,7 +37,7 @@
                                 <button type="button" class="nav-link" role="tab" data-bs-toggle="tab"
                                     data-bs-target="#navs-pills-justified-profile"
                                     aria-controls="navs-pills-justified-profile" aria-selected="false">
-                                     Valider
+                                    Valider
                                     <span class="badge rounded-pill badge-center h-px-20 w-px-20 bg-success">3</span>
                                 </button>
                             </li>
@@ -54,16 +54,49 @@
                                                 <th>Actions</th>
                                             </tr>
                                         </thead>
-        
+
                                         <tbody class="table-border-bottom-0">
-                                            @foreach ($lessons as $lesson)
+                                            @foreach ($lessons_en_attentes as $lesson)
                                                 <tr>
-                                                    <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>{{$lesson->nom}}</strong></td>
-                                                    <td>{{$lesson->totalMotMoore}}</td>
-                                                    <td><span class="badge bg-label-dark me-1">{{$lesson->point}}</span></td>
+                                                    <td><i class="fab fa-angular fa-lg text-danger me-3"></i>
+                                                        <strong>{{ $lesson->nom }}</strong>
+                                                    </td>
+                                                    <td>{{ $lesson->totalMotMoore }}</td>
+                                                    <td><span class="badge bg-label-dark me-1">{{ $lesson->point }}</span>
+                                                    </td>
                                                     <td>
-                                                        <a href="" class="btn btn-primary" type="button">
+                                                        <button type="button" class="btn btn-primary"
+                                                            data-bs-toggle="modal" data-bs-target="#modalToggle">
                                                             Commencer
+                                                        </button>
+                                                        <div class="modal fade" id="modalToggle"
+                                                            aria-labelledby="modalToggleLabel" tabindex="-1"
+                                                            style="display: none" aria-hidden="true">
+                                                            <div class="modal-dialog modal-dialog-centered">
+                                                                <div class="modal-content">
+                                                                    <div class="modal-header">
+                                                                        <h5 class="modal-title" id="modalToggleLabel"><strong>{{$lesson->nom}}</strong></h5>
+                                                                        <button type="button" class="btn-close"
+                                                                            data-bs-dismiss="modal"
+                                                                            aria-label="Close"></button>
+                                                                    </div>
+                                                                    <div class="modal-body">
+                                                                       <p> <strong>Petit resumé</strong></p>
+                                                                        <p>Mot moorés : <strong>{{ $lesson->totalMotMoore }}</strong></p>
+                                                                        <p>Points : <strong>{{ $lesson->point }}</strong></p>
+                                                                    </div>
+                                                                    <div class="modal-footer">
+                                                                        <a href="{{ route('apprentissage-index', $lesson->id) }}" class="btn btn-primary">
+                                                                            Je commence
+                                                                        </a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <a href="{{ route('deselection-lesson-action', $lesson->id) }}"
+                                                            class="btn btn-danger" type="button"
+                                                            onclick="return confirm('Etes vous sûr de vouloir terminer cette action ? En terminant cette action, cette lesson sera retiré et se trouvera désormais dans la section *Selectionner des lessons* .')">
+                                                            Rétirer
                                                         </a>
                                                     </td>
                                                 </tr>
@@ -83,9 +116,9 @@
                                                 <th>Actions</th>
                                             </tr>
                                         </thead>
-        
+
                                         <tbody class="table-border-bottom-0">
-                                            @foreach ($lessons as $lesson)
+                                            {{-- @foreach ($lessons as $lesson)
                                                 <tr>
                                                     <td><i class="fab fa-angular fa-lg text-danger me-3"></i> <strong>{{$lesson->nom}}</strong></td>
                                                     <td>{{$lesson->totalMotMoore}}</td>
@@ -97,7 +130,7 @@
                                                     </a>
                                                     </td>
                                                 </tr>
-                                            @endforeach
+                                            @endforeach --}}
                                         </tbody>
                                     </table>
                                 </div>

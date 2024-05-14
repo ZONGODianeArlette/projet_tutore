@@ -13,6 +13,7 @@ class Motmoore extends Model
         'lesson_id',
         'motmooresingulier_id',
         'motmoorepluriel_id',
+        'numero',
     ];
 
     protected static function boot()

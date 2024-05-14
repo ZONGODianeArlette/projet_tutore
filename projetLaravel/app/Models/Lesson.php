@@ -21,6 +21,11 @@ class Lesson extends Model
         return $this->hasMany(MotMoore::class);
     }
 
+    public function users()
+    {
+        return $this->belongsToMany(User::class);
+    }
+
     // public function motMoore()
     // {
     //     return $this->hasOne(MotMoore::class);
