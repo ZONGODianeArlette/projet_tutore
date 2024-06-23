@@ -35,7 +35,7 @@
       <link rel="stylesheet" href="{{ asset('asset_public/css/style.css') }}">
       <title>@yield('titre1')</title>
     </head>
-    <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+    <body data-spy="scroll" data-target=".site-navbar-target" data-offset="100">
     
       <div class="site-wrap">
     

@@ -16,7 +16,7 @@
                     <div class="d-flex justify-content-between flex-sm-row flex-column gap-3">
                         <div class="d-flex flex-sm-column flex-row align-items-start justify-content-between">
                             <div class="card-title">
-                                <h5 class="text-nowrap mb-2">Leçons En Cours</h5>
+                                <h5 class="text-nowrap mb-2">Leçons en cours</h5>
                             </div>
                             <div class="mt-sm-auto">
                                 <h3 class="mb-0">{{ $total_lessons_en_cours }}</h3>
@@ -33,7 +33,7 @@
                     <div class="d-flex justify-content-between flex-sm-row flex-column gap-3">
                         <div class="d-flex flex-sm-column flex-row align-items-start justify-content-between">
                             <div class="card-title">
-                                <h5 class="text-nowrap mb-2">Leçons Reussis</h5>
+                                <h5 class="text-nowrap mb-2">Leçons réussis</h5>
                             </div>
                             <div class="mt-sm-auto">
                                 <h3 class="mb-0">{{ $total_lessons_reussies }}</h3>
@@ -52,7 +52,7 @@
                     <div class="d-flex justify-content-between flex-sm-row flex-column gap-3">
                         <div class="d-flex flex-sm-column flex-row align-items-start justify-content-between">
                             <div class="card-title">
-                                <h5 class="text-nowrap mb-2">Leçons Terminées</h5>
+                                <h5 class="text-nowrap mb-2">Leçons terminées</h5>
                             </div>
                             <div class="mt-sm-auto">
                                 <h3 class="mb-0">{{ $total_lessons_reussies }}</h3>
@@ -69,7 +69,7 @@
                     <div class="d-flex justify-content-between flex-sm-row flex-column gap-3">
                         <div class="d-flex flex-sm-column flex-row align-items-start justify-content-between">
                             <div class="card-title">
-                                <h5 class="text-nowrap mb-2">Total Points</h5>
+                                <h5 class="text-nowrap mb-2">Total points</h5>
                             </div>
                             <div class="mt-sm-auto">
                                 <h3 class="mb-0">{{ $total_points }}</h3>

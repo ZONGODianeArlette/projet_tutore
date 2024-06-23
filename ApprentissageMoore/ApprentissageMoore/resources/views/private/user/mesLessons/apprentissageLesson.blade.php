@@ -62,16 +62,12 @@
                                     <h5 class="card-header">Status actuel de l'exercice.</h5>
                                     <div class="card-body">
                                         <div class="form-check">
-                                            @if ($motMoore->status == "en_cours")
-                                                <input class="form-check-input" type="checkbox" value="" checked disabled
-                                                id="defaultCheck3" />
-                                                <label class="form-check-label" for="defaultCheck3"> Terminer
-                                                </label>
+                                            @if (in_array($motMoore->id, $validatedMotMooreIds))
+                                                <input class="form-check-input" type="checkbox" value="" checked disabled id="defaultCheck3" />
+                                                <label class="form-check-label" for="defaultCheck3"> Terminé </label>
                                             @else
-                                                <input class="form-check-input" type="checkbox" value="" disabled
-                                                id="defaultCheck3" />
-                                                <label class="form-check-label" for="defaultCheck3"> Terminer
-                                                </label>
+                                                <input class="form-check-input" type="checkbox" value="" disabled id="defaultCheck3" />
+                                                <label class="form-check-label" for="defaultCheck3"> En cours </label>
                                             @endif
                                         </div>
                                     </div>
@@ -163,48 +159,3 @@
     </div>
     </div>
 @endsection
-{{-- 
-<ul class="list-group list-group-flush">
-    <li class="list-group-item">Mot en mooré :
-        <strong>{{ $motMoore->singulier->mot_en_moore }}
-        </strong></li>
-    <li class="list-group-item">Mot en français :
-        <strong>{{ $motMoore->singulier->mot_en_fr }}
-        </strong></li>
-    <li class="list-group-item">Suffixe :
-        <strong>{{ $motMoore->singulier->suffixe }}
-        </strong></li>
-    <li class="list-group-item">Exemple :
-        <strong>{{ $motMoore->singulier->exemple }}
-        </strong></li>
-    <li class="list-group-item">Description :
-        <strong>{{ $motMoore->singulier->description }}
-        </strong></li>
-    <li class="list-group-item">Date d'ajout :
-        <strong>{{ $motMoore->singulier->created_at }}
-        </strong></li>
-</ul> --}}
-
-{{-- @section('scripts')
-    <script>
-        // Récupère toutes les cases à cocher
-        const checkboxes = document.querySelectorAll('.form-check-input');
-
-        checkboxes.forEach(function(checkbox) {
-            // Ajoute un écouteur d'événements de clic à chaque case à cocher
-            checkbox.addEventListener('change', function() {
-                const addButton = document.getElementById('ajouter-button');
-
-                // Vérifie si une case à cocher est cochée
-                const isChecked = Array.from(checkboxes).some(checkbox => checkbox.checked);
-
-                // Affiche ou masque le bouton "Ajouter à mes lessons" en fonction de si une case à cocher est cochée ou non
-                if (isChecked) {
-                    addButton.style.display = 'block';
-                } else {
-                    addButton.style.display = 'none';
-                }
-            });
-        });
-    </script>
-@endsection --}}

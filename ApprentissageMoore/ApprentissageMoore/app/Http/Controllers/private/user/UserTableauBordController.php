@@ -19,7 +19,7 @@ class UserTableauBordController extends Controller
     $total_lessons_reussies = $user->lessons()->where('status', 'valider')->count(); // Assuming 'valider' means 'terminées'
 
     // Récupérer le total des points de l'utilisateur
-    $total_points = $user->point;
+    $total_points = $user->points;
 
     return view('private.user.index', compact(
       'total_lessons_en_cours',

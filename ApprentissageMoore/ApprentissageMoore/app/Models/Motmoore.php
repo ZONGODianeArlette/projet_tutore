@@ -46,6 +46,11 @@ class Motmoore extends Model
     public function users()
     {
         return $this->belongsToMany(User::class)->withPivot('status');
+
+        // return $this->belongsToMany(User::class, 'mot_moore_user')
+        // ->using(MotMooreUser::class)
+        // ->withPivot('status')
+        // ->withTimestamps();
     }
     
 }

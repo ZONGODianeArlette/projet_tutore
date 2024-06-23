@@ -23,10 +23,12 @@ class SelectLessonController extends Controller
             if ($recherche = $request->recherche_lessons_user) {
                 $lessons->where('nom', 'like', '%' . $recherche . '%');
             }
+
+            $totalLesson = $lessons->count();
         
             $lessons = $lessons->orderBy('created_at', 'asc')->paginate(5, ['*'], 'pageLesson');
         
-            return view('private.user.selectLesson.index', compact('lessons'));
+            return view('private.user.selectLesson.index', compact('lessons', 'totalLesson'));
     }
 
     public function selectionAction(Request $request)

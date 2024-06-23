@@ -66,7 +66,7 @@
                                 <tr>
                                     <td><a href="{{ route('apprentissage-index', $lesson->id) }}">{{ $lesson->nom }}</a></td>
                                     <td>
-                                        <span class="badge bg-label-dark me-1">{{ $lesson->point }}</span>
+                                        <span class="badge bg-label-dark me-1">{{ $lesson->points }}</span>
                                     </td>
                                 </tr>
                                 @endforeach

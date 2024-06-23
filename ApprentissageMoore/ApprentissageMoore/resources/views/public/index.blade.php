@@ -11,6 +11,8 @@
         <div class="col-md-12" data-aos="fade-up" data-aos-delay="400">
 
           <div class="row justify-content-center mb-4">
+
+            
             <div class="col-md-10 text-center">
               <h2>Bienvenue sur l'Apprentissage du pluriel des mots Moore par <span class="typed-words"></span></h2>
               @auth

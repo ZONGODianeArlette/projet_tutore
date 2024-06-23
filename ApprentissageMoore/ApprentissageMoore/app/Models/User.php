@@ -22,7 +22,7 @@ class User extends Authenticatable
         'email',
         'password',
         'role',
-        'point',
+        'points',
         'profile_image'
     ];
 
@@ -53,6 +53,12 @@ class User extends Authenticatable
 
     public function motMoores()
     {
-        return $this->belongsToMany(MotMoore::class)->withPivot('status');
+        return $this->belongsToMany(MotMoore::class)
+                    ->withPivot('status');
+
+                    // return $this->belongsToMany(MotMoore::class, 'mot_moore_user')
+                    // ->using(MotMooreUser::class)
+                    // ->withPivot('status')
+                    // ->withTimestamps();
     }
 }

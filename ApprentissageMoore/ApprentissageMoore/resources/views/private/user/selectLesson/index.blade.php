@@ -22,7 +22,7 @@
                         </div>
                     @endif
                     <div class="card">
-                        <h5 class="card-header">Listes des leçons (300)</h5>
+                        <h5 class="card-header">Listes des leçons ({{ $totalLesson }})</h5>
                         <div class="table-responsive text-nowrap">
                             <table class="table">
                                 <thead class="table-light">

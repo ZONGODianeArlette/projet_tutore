@@ -14,6 +14,7 @@ use App\Http\Controllers\private\user\UserTableauBordController;
 
 
 Route::get('/', [PublicController::class, "index"])->name("public.index");
+Route::get('/listemot',[PublicController::class,"mes_mots"])->name("public.listmot");
 Route::get('/profil', [ProfilController::class, "profil"])->name("private.admin.profil");
 Route::get('/liste-user', [UserController::class, "liste"])->name("private.admin.list.liste");
 //  Route::get('/utilisateur', [tableauBordController::class, "utilisateur"])->name("admin.list_utilisateur");
